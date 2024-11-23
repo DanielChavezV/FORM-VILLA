@@ -1,0 +1,207 @@
+:root {
+    --purple-darkest: #1A0B2E;
+    --purple-dark: #2D1B69;
+    --purple-medium: #4C3A8F;
+    --purple-light: #7B61FF;
+    --purple-lightest: #9D8DF1;
+    --text-light: #FFFFFF;
+    --text-dark: #1A0B2E;
+    --success: #4CAF50;
+    --error: #F44336;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--purple-darkest), var(--purple-dark));
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: var(--purple-medium);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
+}
+
+.icon-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.card {
+    background: rgba(45, 27, 105, 0.6);
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--purple-lightest);
+}
+
+.form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group {
+    display: grid;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--purple-lightest);
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.8rem;
+    color: var(--purple-lightest);
+}
+
+select, input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(61, 10, 64, 0.4);
+    border: 1px solid var(--purple-light);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select {
+    appearance: none;
+    cursor: pointer;
+    padding-right: 40px;
+}
+
+select:focus, input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--purple-lightest);
+    box-shadow: 0 0 0 2px rgba(157, 141, 241, 0.3);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder,
+select:invalid {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-icon {
+    position: relative;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--purple-lightest);
+}
+
+.input-icon input {
+    padding-left: 30px;
+}
+
+.submit-button {
+    background: linear-gradient(135deg, var(--purple-light), var(--purple-medium));
+    color: var(--text-light);
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-light));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .title {
+        text-align: center;
+    }
+}
